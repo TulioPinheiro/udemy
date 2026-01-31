@@ -1,0 +1,28 @@
+# Yield from
+def gen1():
+    print('começou gen1')
+    yield 1
+    yield 2
+    yield 3
+    print('Acabou gen1')
+    
+def gen3():
+    print('começou gen 3')
+    yield 10
+    yield 20
+    yield 30
+    
+def gen2(gen):
+    print('começou gen2')
+    yield from gen
+    yield 4
+    yield 5
+    yield 6
+    print('acabou gen2')
+    
+g1 = gen2(gen1)
+g2 = gen2(gen3)
+for numero in g1:
+    print(numero)
+for numero in g2 :
+    print(numero)
