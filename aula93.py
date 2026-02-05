@@ -14,7 +14,10 @@ except ZeroDivisionError:
     print('Dividiu por zero')
 except NameError :
     print('nome b não está definido')
-except ( TypeError + IndexError):
+except ( TypeError + IndexError) as error: #melhor dividir em 2 
     print('TyperError, IndexError')
+    print('msg', error.__class__.__name__)
 except Exception :
     print('Erro Desconhecido.')
+    
+print('Continuar')
